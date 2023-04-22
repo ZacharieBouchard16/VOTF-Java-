@@ -12,7 +12,7 @@ public class Inventory {
         this.attackUp = attackUp;
         this.meteorCrash = meteorCrash;
     }
-    public void Display() {
+    public void display() {
         System.out.println("- Potion: " + potion);
         System.out.println("- Revive: " + revive);
         System.out.println("- Defense-Up: " + defenseUp);

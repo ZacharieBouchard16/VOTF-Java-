@@ -1,32 +1,40 @@
-public class Enemy {
-    String name;
-    int health[] = new int[2]; //[0] = current | [1] = max
-    int strength;
-    int defense;
-    int intelligence;
-    int speed;
-    int luck;
-    int mana;
+import java.util.Random;
 
-    int level;
-
+public class Enemy extends Entity{
     static int aliveCount;
 
-    boolean isAlive = true;
-
-    double expDrop;
-    Attack attack[];
+    //double expDrop;
 
     public Enemy(String name, int health, int strength, int defense, int intelligence, int speed, int luck) {
-        this.name = name;
-        this.health[0] = this.health[1] = health;
-        this.strength = strength;
-        this.defense = defense;
-        this.intelligence = intelligence;
-        this.speed = speed;
-        this.luck = luck;
+        super(name, health, strength, defense, intelligence, speed, luck);
         aliveCount++;
-
-        mana = 100 + (intelligence * 3);
+    }
+    @Override
+    public String getAction() {
+        return "attack";
+    }
+    @Override
+    public Entity getTarget() {
+        int target;
+        Random rand = new Random();
+        do {
+            target = rand.nextInt(Overworld.heroes.length);
+        }
+        while (!Overworld.heroes[target].isAlive || !Overworld.heroes[target].isUnlocked);
+        return Overworld.heroes[target];
+    }
+    @Override
+    public int getAttack() {
+        int attackNum;
+        Random rand = new Random();
+        attackNum = rand.nextInt(attack.length);
+        do {
+            mana[0] -= attack[attackNum].cost;
+            if (mana[0] < 0) {
+                mana[0] += attack[attackNum].cost;
+            }
+        }
+        while (mana[0] < 0);
+        return attackNum;
     }
 }

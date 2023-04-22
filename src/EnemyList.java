@@ -363,6 +363,7 @@ public class EnemyList {
                 enemy.attack[0] = new Attack("Slash", 10 + (enemy.strength / 2), 100, 0);
                 enemy.attack[1] = new Attack("Fireball", 20 + (enemy.intelligence / 3), 90, 17);
                 enemy.attack[2] = new Attack("Hell Slash", 27 + (enemy.strength / 2), 100, 10);
+                enemy.attack[3] = new Attack("Flare Blast", 30 + (enemy.strength / 2), 80, 30);
             }
             /*case 4 -> {
                 enemy = new Enemy(
@@ -395,7 +396,8 @@ public class EnemyList {
                 boss.attack = new Attack[4];
                 boss.attack[0] = new Attack("Slash", 10 + (boss.strength / 2), 100, 0);
                 boss.attack[1] = new Attack("Fireball", 20 + (boss.intelligence / 3), 90, 17);
-                boss.attack[2] = new Attack("Hell Slash", 27 + (boss.strength / 2), 100, 10);
+                boss.attack[2] = new Attack("Hell Slash", 27 + (boss.strength / 2), 100, 20);
+                boss.attack[3] = new Attack("Flare Blast", 30 + (boss.strength / 2), 80, 30);
             }
             case 2 -> {
                 boss = new Enemy(
@@ -407,6 +409,11 @@ public class EnemyList {
                         18,
                         16
                 );
+                boss.attack = new Attack[4];
+                boss.attack[0] = new Attack("Slash", 25 + (boss.strength / 2), 100, 0);
+                boss.attack[1] = new Attack("Flare Dash", 38 + (boss.intelligence / 3), 100, 17);
+                boss.attack[2] = new Attack("Hell Slash", 52 + (boss.strength / 2), 100, 20);
+                boss.attack[3] = new Attack("Dark Inferno", 120 + (boss.intelligence / 3), 60, 50);
             }
             case 3 -> {
                 boss = new Enemy(
@@ -414,10 +421,15 @@ public class EnemyList {
                         1300,
                         50,
                         40,
-                        15,
+                        65,
                         25,
                         20
                 );
+                boss.attack = new Attack[4];
+                boss.attack[0] = new Attack("Flaming Slash", 30 + (boss.strength / 2), 100, 0);
+                boss.attack[1] = new Attack("True Ignition", 60 + (boss.intelligence / 3), 80, 20);
+                boss.attack[2] = new Attack("Molten Rock", 70 + (boss.intelligence / 3), 65, 35);
+                boss.attack[3] = new Attack("Complete Ignition", 90 + (boss.intelligence / 3), 50, 50);
             }
             case 4 -> {
                 boss = new Enemy(
@@ -425,10 +437,15 @@ public class EnemyList {
                         2500,
                         75,
                         60,
-                        80,
+                        0,
                         25,
                         25
                 );
+                boss.attack = new Attack[4];
+                boss.attack[0] = new Attack("Hell Slash", 52 + (boss.strength / 2), 100, 0);
+                boss.attack[1] = new Attack("Corkscrew Slash", 60 + (boss.strength / 2), 90, 0);
+                boss.attack[2] = new Attack("Abyssal Slash", 70 + (boss.strength / 2), 100, 0);
+                boss.attack[3] = new Attack("Eviscerate", 80 + (boss.strength / 2), 80, 0);
             }
             case 5 -> {
                 boss = new Enemy(
@@ -440,6 +457,11 @@ public class EnemyList {
                         40,
                         30
                 );
+                boss.attack = new Attack[4];
+                boss.attack[0] = new Attack("Wallop", 50 + (boss.strength / 2), 100, 0);
+                boss.attack[1] = new Attack("Frostbite", 60 + (boss.intelligence / 3), 100, 20);
+                boss.attack[2] = new Attack("Incinerate", 60 + (boss.intelligence / 2), 100, 20);
+                boss.attack[3] = new Attack("Meteor Crash", 200 + (boss.strength / 2), 40, 0);
             }
             default -> throw new IllegalStateException("Unexpected value: " + world);
         }
